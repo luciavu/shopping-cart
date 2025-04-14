@@ -11,7 +11,7 @@ body {
 
 h2 {
   font-size: 2rem;
-  margin-top: 3rem;
+  margin-top: 7rem;
 }
 
 h3 {
@@ -26,6 +26,10 @@ button {
 }
 
 .nav {
+  position: fixed;
+  top: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
   width: 35%;
   justify-self: center;
   display: flex;
@@ -50,6 +54,7 @@ button {
 
 .nav-light-theme {
   border: 0.1rem solid black;
+  background-color: rgba(255, 255, 255, 0.8);
 
   button {
     color: black;
@@ -64,15 +69,17 @@ button {
   color: black;
 }
 
-.github {
-  position: absolute;
-  a {
-    position: relative;
-    right: 0.4rem;
-    top: 0.4rem;
+.page-wrapper {
+  .github {
+    a {
+      overflow: hidden;
+      right: 0rem;
+      top: -5rem;
 
-    svg {
-      font-size: 2.5rem;
+      svg {
+        font-size: 2.5rem;
+        display: block;
+      }
     }
   }
 }
@@ -99,6 +106,14 @@ button {
   padding: 0 1rem;
 }
 
+.item-counter {
+  position: fixed;
+  font-size: 0.8rem;
+  top: 2.5rem;
+  right: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
 input {
   padding: 0.3rem;
   border-radius: 2rem;
@@ -107,24 +122,46 @@ input {
 }
 
 .card {
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
   width: 13rem;
 
-  :hover {
-    opacity: 0.8;
+  .flex {
+    margin: 1rem 0;
   }
 
-  .banner {
-    width: 100%;
-    padding: 0.3rem 0;
-    text-align: center;
-    background-color: rgb(240, 240, 240);
-    color: rgb(84, 84, 84);
-    font-size: 0.9rem;
-    font-weight: 600;
+  .order-quantity {
+    display: flex;
+    align-items: center;
+
+    * {
+      padding: 0.5rem 0;
+    }
+
+    input::-webkit-inner-spin-button,
+    input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input {
+      -moz-appearance: textfield;
+      border-radius: 0;
+      width: 100%;
+      margin: 0;
+      background-color: transparent;
+      color: black;
+      text-align: center;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    button {
+      background-color: black;
+    }
   }
 
   img {
@@ -143,7 +180,7 @@ input {
   }
 
   .price {
-    color: rgb(159, 151, 151);
+    color: rgb(123, 123, 123);
     font-size: 2rem;
   }
 

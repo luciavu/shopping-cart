@@ -1,4 +1,5 @@
 import './App.scss';
+import { FaGithub } from 'react-icons/fa';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './assets/components/NavBar';
@@ -19,14 +20,25 @@ function App() {
 
   return (
     <>
-      <Navbar></Navbar>
-      {location.pathname === '/' ? (
-        <Home></Home>
-      ) : location.pathname === '/products' ? (
-        <Products></Products>
-      ) : (
-        <Cart></Cart>
-      )}
+      <div className="page-wrapper">
+        <div className="github">
+          <a
+            href="https://github.com/luciavu/shopping-cart"
+            target="_blank"
+            className={location.pathname === '/' ? 'dark-theme' : 'light-theme'}
+          >
+            <FaGithub />
+          </a>
+        </div>
+        <Navbar></Navbar>
+        {location.pathname === '/' ? (
+          <Home></Home>
+        ) : location.pathname === '/products' ? (
+          <Products></Products>
+        ) : (
+          <Cart></Cart>
+        )}
+      </div>
     </>
   );
 }

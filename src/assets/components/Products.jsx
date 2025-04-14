@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import ProductCards from './ProductCards';
+import ProductCard from './ProductCard';
 
 const Products = () => {
   const [active, setActive] = useState('all');
 
   return (
     <>
+      <div className="item-counter">Items in cart: {0}</div>
       <div className="product-wrapper">
         <h2>Products</h2>
         <h3>Explore our extensive range of high-quality products.</h3>
@@ -51,26 +52,26 @@ const Products = () => {
             <h5>{300} items found.</h5>
           </div>
           <div className="products">
-            <ProductCards></ProductCards>
-            <ProductCards></ProductCards>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
 
-            <ProductCards></ProductCards>
-            <ProductCards></ProductCards>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
 
-            <ProductCards></ProductCards>
-            <ProductCards></ProductCards>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
 
-            <ProductCards></ProductCards>
-            <ProductCards></ProductCards>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
 
-            <ProductCards></ProductCards>
-            <ProductCards></ProductCards>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
 
-            <ProductCards></ProductCards>
-            <ProductCards></ProductCards>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
 
-            <ProductCards></ProductCards>
-            <ProductCards></ProductCards>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
           </div>
         </div>
       </div>
