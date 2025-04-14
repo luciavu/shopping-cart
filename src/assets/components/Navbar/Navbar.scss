@@ -1,0 +1,42 @@
+button {
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav {
+  position: fixed;
+  top: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35%;
+  justify-self: center;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 2rem;
+  padding: 0.6rem;
+  margin: 1rem;
+  border: 0.1rem solid white;
+
+  * {
+    cursor: pointer;
+  }
+}
+
+.nav-light-theme {
+  border: 0.1rem solid white;
+
+  button {
+    color: white;
+  }
+}
+
+.nav-light-theme {
+  border: 0.1rem solid rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.8);
+
+  button {
+    color: black;
+  }
+}

@@ -1,6 +1,6 @@
 import App from './App';
-import Home from './assets/components/Home';
-import Products from './assets/components/Products';
+import Home from './assets/components/Home/Home';
+import Products from './assets/components/Products/Products';
 import Cart from './assets/components/Cart';
 import ErrorPage from './ErrorPage';
 

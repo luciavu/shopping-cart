@@ -2,10 +2,10 @@ import './App.scss';
 import { FaGithub } from 'react-icons/fa';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import Navbar from './assets/components/NavBar';
-import Products from './assets/components/Products';
+import Navbar from './assets/components/Navbar/Navbar';
+import Products from './assets/components/Products/Products';
 import Cart from './assets/components/Cart';
-import Home from './assets/components/Home';
+import Home from './assets/components/Home/Home';
 
 function App() {
   const location = useLocation();

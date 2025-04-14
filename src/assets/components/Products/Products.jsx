@@ -1,9 +1,12 @@
+import './Products.scss';
 import { useState } from 'react';
-import ProductCard from './ProductCard';
+import ProductCard from '../ProductCard/ProductCard';
+import { useProducts } from '../../../contexts/ProductsContext';
 
 const Products = () => {
   const [active, setActive] = useState('all');
-
+  const data = useProducts(); // products, loading, error
+  const products = data[0];
   return (
     <>
       <div className="item-counter">Items in cart: {0}</div>
@@ -29,7 +32,7 @@ const Products = () => {
                   setActive('clothes');
                 }}
               >
-                Clothes
+                Women's Clothing
               </div>
               <div
                 className={`bags ${active === 'bags' ? 'active' : ''}`}
@@ -37,7 +40,15 @@ const Products = () => {
                   setActive('bags');
                 }}
               >
-                Bags
+                Men's Clothing
+              </div>
+              <div
+                className={`tech ${active === 'tech' ? 'active' : ''}`}
+                onClick={() => {
+                  setActive('tech');
+                }}
+              >
+                Storage/Monitors
               </div>
               <div
                 className={`jewellery ${active === 'jewellery' ? 'active' : ''}`}
@@ -46,32 +57,22 @@ const Products = () => {
                 }}
               >
                 Jewellery
-              </div>{' '}
+              </div>
             </div>
 
             <h5>{300} items found.</h5>
           </div>
           <div className="products">
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
+            {products.map((product) => {
+              return (
+                <ProductCard
+                  key={product.id}
+                  name={product.title}
+                  price={product.price}
+                  image={product.image}
+                ></ProductCard>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -1,5 +1,7 @@
+import './ProductCard.scss';
 import { useState } from 'react';
-const ProductCard = () => {
+
+const ProductCard = ({ name, price, image }) => {
   const [quantity, setQuantity] = useState(0);
 
   const increase = () => setQuantity((quantity) => quantity + 1);
@@ -13,9 +15,9 @@ const ProductCard = () => {
   return (
     <>
       <div className="card">
-        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="" />
-        <div className="name">Product name</div>
-        <div className="price">$60</div>
+        <img src={image} alt="" />
+        <div className="name">{name}</div>
+        <div className="price">${price}</div>
         {quantity > 0 ? (
           <div className="order-quantity">
             <button id="decrease-quantity" onClick={decrease}>
