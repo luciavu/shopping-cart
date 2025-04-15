@@ -1,15 +1,21 @@
 import './ProductCard.scss';
 import { useState } from 'react';
+import { useCart } from '../../../contexts/CartContext';
 
-const ProductCard = ({ name, price, image }) => {
+const ProductCard = ({ id, name, price, image }) => {
   const [quantity, setQuantity] = useState(0);
+  const { addToCart, removeFromCart } = useCart();
 
-  const increase = () => setQuantity((quantity) => quantity + 1);
+  const increase = () => {
+    setQuantity((quantity) => quantity + 1);
+    addToCart(id);
+  };
   const decrease = () => {
     setQuantity((quantity) => {
       const newQuantity = quantity - 1;
       return newQuantity < 0 ? 0 : newQuantity;
     });
+    removeFromCart(id);
   };
 
   return (

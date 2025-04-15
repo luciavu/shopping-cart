@@ -20,7 +20,7 @@ input {
     align-items: center;
 
     * {
-      padding: 0.5rem 0;
+      padding: 0.8rem 0;
     }
 
     input::-webkit-inner-spin-button,
@@ -59,7 +59,7 @@ input {
   }
 
   .name {
-    color: rgb(107, 107, 107);
+    color: rgb(72, 72, 72);
     font-weight: 500;
     height: 2.5rem;
     overflow: hidden;
@@ -67,8 +67,9 @@ input {
 
   .price {
     color: rgb(0, 0, 0);
-    font-size: 2.4rem;
+    font-size: 2.3rem;
     margin: 0.2rem 0;
+    font-weight: 500;
   }
 
   button {
