@@ -12,8 +12,10 @@ function App() {
 
   useEffect(() => {
     if (location.pathname === '/') {
+      document.body.style.backgroundImage = `url('/images/homepage.jpg')`;
       document.body.style.backgroundColor = 'black';
     } else {
+      document.body.style.backgroundImage = 'none';
       document.body.style.backgroundColor = 'white';
     }
   }, [location.pathname]);
