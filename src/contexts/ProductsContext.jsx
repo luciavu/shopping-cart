@@ -11,7 +11,8 @@ export const ProductsProvider = ({ children }) => {
     fetch('https://fakestoreapi.com/products')
       .then((response) => response.json())
       .then((data) => {
-        setProducts(data);
+        const groupedData = groupByCategory(data);
+        setProducts(groupedData);
         setLoading(false);
       })
       .catch((error) => {
@@ -19,6 +20,18 @@ export const ProductsProvider = ({ children }) => {
         setLoading(false);
       });
   }, []);
+
+  // Group products by category
+  const groupByCategory = (data) => {
+    return data.reduce((acc, item) => {
+      const { category } = item;
+      if (!acc[category]) {
+        acc[category] = [];
+      }
+      acc[category].push(item);
+      return acc;
+    }, {});
+  };
 
   return (
     <ProductsContext.Provider value={[products, loading, error]}>

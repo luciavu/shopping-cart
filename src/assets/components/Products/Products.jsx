@@ -5,8 +5,11 @@ import { useProducts } from '../../../contexts/ProductsContext';
 
 const Products = () => {
   const [active, setActive] = useState('all');
-  const data = useProducts(); // products, loading, error
+  const data = useProducts(); // grouped products, loading, error
   const products = data[0];
+  console.log('Grouped products:', products);
+  console.log(products);
+
   return (
     <>
       <div className="item-counter">Items in cart: {0}</div>
@@ -27,43 +30,53 @@ const Products = () => {
                 All
               </div>
               <div
-                className={`clothes ${active === 'clothes' ? 'active' : ''}`}
+                className={`women's clothing ${active === `women's clothing` ? 'active' : ''}`}
                 onClick={() => {
-                  setActive('clothes');
+                  setActive(`women's clothing`);
                 }}
               >
                 Women's Clothing
               </div>
               <div
-                className={`bags ${active === 'bags' ? 'active' : ''}`}
+                className={`men's clothing ${active === `men's clothing` ? 'active' : ''}`}
                 onClick={() => {
-                  setActive('bags');
+                  setActive(`men's clothing`);
                 }}
               >
                 Men's Clothing
               </div>
               <div
-                className={`tech ${active === 'tech' ? 'active' : ''}`}
+                className={`electronics ${active === 'electronics' ? 'active' : ''}`}
                 onClick={() => {
-                  setActive('tech');
+                  setActive('electronics');
                 }}
               >
-                Storage/Monitors
+                Electronics
               </div>
               <div
-                className={`jewellery ${active === 'jewellery' ? 'active' : ''}`}
+                className={`jewelery ${active === 'jewelery' ? 'active' : ''}`}
                 onClick={() => {
-                  setActive('jewellery');
+                  setActive('jewelery');
                 }}
               >
                 Jewellery
               </div>
             </div>
 
-            <h5>{300} items found.</h5>
+            <h5>
+              {active === 'all'
+                ? Object.values(products).flat().length
+                : products?.[active]?.length || 0}{' '}
+              items found.
+            </h5>
           </div>
+          {!products ? <p>Loading products...</p> : ''}
+          {data[2] ? <p>An error has occurred</p> : ''}
           <div className="products">
-            {products.map((product) => {
+            {(active === 'all'
+              ? Object.values(products || {}).flat()
+              : products?.[active] || []
+            ).map((product) => {
               return (
                 <ProductCard
                   key={product.id}

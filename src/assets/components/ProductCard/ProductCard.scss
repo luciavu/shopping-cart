@@ -53,27 +53,29 @@ input {
     width: 100%;
     margin: auto;
     aspect-ratio: 1/1;
-    padding: 1.5rem;
+    padding: 2rem;
     object-fit: contain;
     background-color: white;
-    margin-bottom: 0.5rem;
   }
 
   .name {
+    color: rgb(107, 107, 107);
     font-weight: 500;
     height: 2.5rem;
     overflow: hidden;
   }
 
   .price {
-    color: rgb(123, 123, 123);
-    font-size: 2rem;
+    color: rgb(0, 0, 0);
+    font-size: 2.4rem;
+    margin: 0.2rem 0;
   }
 
   button {
     background-color: black;
     margin: 0.5rem 0;
-    padding: 0.5rem;
+    padding: 0.8rem;
     width: 100%;
+    font-weight: 600;
   }
 }
