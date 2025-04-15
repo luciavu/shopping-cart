@@ -1,10 +1,10 @@
 import './App.scss';
 import { FaGithub } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Navbar from './assets/components/Navbar/Navbar';
 import Products from './assets/components/Products/Products';
-import Cart from './assets/components/Cart';
+import Cart from './assets/Cart/Cart';
 import Home from './assets/components/Home/Home';
 
 function App() {

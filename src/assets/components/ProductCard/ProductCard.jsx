@@ -21,9 +21,9 @@ const ProductCard = ({ id, name, price, image }) => {
   return (
     <>
       <div className="card">
-        <img src={image} alt="" />
+        <img src={image} alt={name} />
         <div className="name">{name}</div>
-        <div className="price">${price}</div>
+        <div className="price">${price.toFixed(2)}</div>
         {quantity > 0 ? (
           <div className="order-quantity">
             <button id="decrease-quantity" onClick={decrease}>
