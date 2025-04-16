@@ -1,8 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.scss';
+
 const Navbar = () => {
   const location = useLocation();
-
   const getTheme = () => {
     return location.pathname === '/' ? '-dark-theme' : '-light-theme';
   };

@@ -2,18 +2,15 @@ import './Products.scss';
 import { useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 import { useProducts } from '../../../contexts/ProductsContext';
-import { useCart } from '../../../contexts/CartContext';
 
 const Products = () => {
   const [active, setActive] = useState('all');
   const [products, loading, error] = useProducts(); // grouped products, loading, error
   const filteredProducts =
     active === 'all' ? Object.values(products || {}).flat() : products?.[active] || [];
-  const { getCartQuantity } = useCart();
 
   return (
     <>
-      <div className="item-counter">Items in cart: {getCartQuantity()}</div>
       <div className="product-wrapper">
         <h2>Products</h2>
         <h3>Explore our extensive range of high-quality products.</h3>
