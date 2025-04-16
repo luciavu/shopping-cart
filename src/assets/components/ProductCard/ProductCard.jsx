@@ -1,6 +1,7 @@
 import './ProductCard.scss';
 import { useState } from 'react';
 import { useCart } from '../../../contexts/CartContext';
+import PropTypes from 'prop-types';
 
 const ProductCard = ({ id, name, price, image }) => {
   const [quantity, setQuantity] = useState(0);
@@ -29,7 +30,14 @@ const ProductCard = ({ id, name, price, image }) => {
             <button id="decrease-quantity" onClick={decrease}>
               -
             </button>
-            <input type="number" name="quantity" id="quantity" min={0} readOnly value={quantity} />
+            <input
+              type="number"
+              name="quantity"
+              id={`id${quantity}`}
+              min={0}
+              readOnly
+              value={quantity}
+            />
             <button id="increase-quantity" onClick={increase}>
               +
             </button>
@@ -42,6 +50,13 @@ const ProductCard = ({ id, name, price, image }) => {
       </div>
     </>
   );
+};
+
+ProductCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default ProductCard;

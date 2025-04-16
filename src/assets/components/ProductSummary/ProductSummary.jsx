@@ -1,5 +1,7 @@
 import './ProductSummary.scss';
-import { useCart } from '../../contexts/CartContext';
+import { useCart } from '../../../contexts/CartContext';
+import PropTypes from 'prop-types';
+
 const ProductSummary = ({ itemId, title, quantity, price, image }) => {
   const { addToCart, removeFromCart } = useCart();
 
@@ -26,6 +28,14 @@ const ProductSummary = ({ itemId, title, quantity, price, image }) => {
       </div>
     </>
   );
+};
+
+ProductSummary.propTypes = {
+  itemId: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default ProductSummary;

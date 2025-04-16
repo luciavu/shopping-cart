@@ -1,6 +1,6 @@
 import './Cart.scss';
 import { useState } from 'react';
-import { useCart } from '../../contexts/CartContext';
+import { useCart } from '../../../contexts/CartContext';
 import ProductSummary from '../ProductSummary/ProductSummary';
 
 const Cart = () => {
@@ -13,6 +13,7 @@ const Cart = () => {
     getCartTotal,
     clearCart,
   } = useCart();
+
   const shipping = 10;
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [total, setTotal] = useState(0);

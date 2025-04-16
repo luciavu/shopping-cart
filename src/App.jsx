@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './assets/components/Navbar/Navbar';
 import Products from './assets/components/Products/Products';
-import Cart from './assets/Cart/Cart';
+import Cart from './assets/components/Cart/Cart';
 import Home from './assets/components/Home/Home';
 
 function App() {
