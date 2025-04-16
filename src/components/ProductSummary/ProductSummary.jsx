@@ -1,5 +1,5 @@
 import './ProductSummary.scss';
-import { useCart } from '../../../contexts/CartContext';
+import { useCart } from '../../context/CartContext';
 import PropTypes from 'prop-types';
 
 const ProductSummary = ({ itemId, title, quantity, price, image }) => {

@@ -2,10 +2,10 @@ import './App.scss';
 import { FaGithub } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import Navbar from './assets/components/Navbar/Navbar';
-import Products from './assets/components/Products/Products';
-import Cart from './assets/components/Cart/Cart';
-import Home from './assets/components/Home/Home';
+import Navbar from './components/Navbar/Navbar';
+import Products from './components/Products/Products';
+import Cart from './components/Cart/Cart';
+import Home from './components/Home/Home';
 
 function App() {
   const location = useLocation();
@@ -28,6 +28,7 @@ function App() {
             href="https://github.com/luciavu/shopping-cart"
             target="_blank"
             className={location.pathname === '/' ? 'dark-theme' : 'light-theme'}
+            aria-label="github"
           >
             <FaGithub />
           </a>

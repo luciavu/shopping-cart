@@ -1,6 +1,6 @@
 import './Cart.scss';
 import { useState } from 'react';
-import { useCart } from '../../../contexts/CartContext';
+import { useCart } from '../../context/CartContext';
 import ProductSummary from '../ProductSummary/ProductSummary';
 
 const Cart = () => {

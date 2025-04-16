@@ -1,6 +1,6 @@
 import './ProductCard.scss';
 import { useState } from 'react';
-import { useCart } from '../../../contexts/CartContext';
+import { useCart } from '../../context/CartContext';
 import PropTypes from 'prop-types';
 
 const ProductCard = ({ id, name, price, image }) => {

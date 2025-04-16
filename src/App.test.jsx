@@ -1,25 +1,36 @@
 import { describe, it, expect } from 'vitest';
-//import { render, screen } from '@testing-library/react';
-
+import { MemoryRouter } from 'react-router-dom';
+import { render, screen } from '@testing-library/react';
+import { ProductsProvider } from './context/ProductsContext';
+import { CartProvider } from './context/CartContext';
 import App from './App';
-/*
-describe('App', () => {
-  it('renders headline', () => {
-    render(<App title="React" />);
 
-    screen.debug();
+const renderWithRoute = (route) => {
+  render(
+    <MemoryRouter initialEntries={[route]}>
+      <ProductsProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
+      </ProductsProvider>
+    </MemoryRouter>
+  );
+};
 
-    // check if App components renders headline
+describe('App component', () => {
+  it('renders Home at root path', () => {
+    renderWithRoute('/');
+    expect(screen.getByRole('link', { name: /github/i })).toBeInTheDocument();
+    expect(screen.getByText(/home/i)).toBeInTheDocument();
   });
-});
-*/
 
-describe('something truthy and falsy', () => {
-  it('true to be true', () => {
-    expect(true).toBe(true);
+  it('renders Products at /products', () => {
+    renderWithRoute('/products');
+    expect(screen.getByRole('heading', { name: /Products/i, level: 2 })).toBeInTheDocument();
   });
 
-  it('false to be false', () => {
-    expect(false).toBe(false);
+  it('renders Cart at /cart', () => {
+    renderWithRoute('/cart');
+    expect(screen.getByRole('heading', /Your cart/i)).toBeInTheDocument();
   });
 });

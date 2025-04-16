@@ -1,7 +1,7 @@
 import './Products.scss';
 import { useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
-import { useProducts } from '../../../contexts/ProductsContext';
+import { useProducts } from '../../context/ProductsContext';
 
 const Products = () => {
   const [active, setActive] = useState('all');
